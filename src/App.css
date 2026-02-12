@@ -1,0 +1,61 @@
+.app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+.header {
+  background: #4f46e5;
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.header p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.cta-button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background: #4f46e5;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.feature h2 {
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  padding: 1rem;
+  background: #e5e7eb;
+  border-radius: 8px;
+}
