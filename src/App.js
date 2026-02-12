@@ -12,7 +12,7 @@ function App() {
       <section className="features">
         <div className="feature">
           <h2>Feature One</h2>
-          <p>Describe your first amazing feature here.</p>
+          <p>this is my first pipeline test</p>
         </div>
         <div className="feature">
           <h2>Feature Two</h2>
