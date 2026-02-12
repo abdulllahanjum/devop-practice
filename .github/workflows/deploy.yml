@@ -1,0 +1,38 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: SSH into EC2 and Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/devop-practice
+            git pull origin main
+            
+            # Stop and remove containers
+            docker compose down
+            
+            # Remove the specific image to ensure a fresh build
+            # 'docker rmi' deletes the image. 
+            # We use '|| true' so the script doesn't crash if the image doesn't exist yet.
+            docker rmi devop-practice-react-app || true
+            
+            # Build and start the container
+            docker compose up -d --build
+            
+            # Clean up unused Docker data (optional but good for EC2)
+            docker system prune -f
