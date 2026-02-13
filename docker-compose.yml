@@ -1,8 +1,6 @@
-version: "3.9"
-
 services:
   react-app:
-    build: .
+    image: abdulllahanjum900/devop-practice:latest
     ports:
       - "3000:80"
     restart: always
