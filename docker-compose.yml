@@ -1,6 +1,6 @@
 services:
   react-app:
-    image: abdulllahanjum900/devop-practice:latest
+    image: abdullahanjum900/devop-practice:latest
     ports:
       - "3000:80"
     restart: always
